@@ -1,5 +1,5 @@
-const Conversation = require("../models/conversationModel");
-const Message = require("../models/messagesModel");
+const { Conversation } = require("../models/conversationModel");
+const { Message } = require("../models/messagesModel");
 
 exports.sendMessage = async (req, res) => {
   try {
@@ -23,13 +23,31 @@ exports.sendMessage = async (req, res) => {
     if (newMessage) {
       conversation.messages.push(newMessage._id);
     }
+    await Promise.all([conversation.save(), newMessage.save()]);
 
-    await conversation.save();
-    await newMessage.save();
-
-    res.status(201).json({ message: newMessage });
+    res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage Controller", error.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+exports.getMessages = async (req, res) => {
+  try {
+    const { id: receiverId } = req.params;
+    const senderId = req.user._id;
+    const conversation = await Conversation.findOne({
+      participants: {
+        $all: [senderId, receiverId],
+      },
+    }).populate("messages");
+
+    if (!conversation) return res.status(200).json([]);
+
+    const messages = conversation.messages;
+    res.status(200).json(messages);
+  } catch (error) {
+    console.log("Error in getMessages Controller", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
 };

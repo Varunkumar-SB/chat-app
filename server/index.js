@@ -5,8 +5,9 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
 // Custom Imports
-const userRouter = require("./routes/users");
-const messageRouter = require("./routes/messages");
+const authRouter = require("./routes/auth");
+const messageRouter = require("./routes/message");
+const userRouter = require("./routes/user");
 const { connectDB } = require("./db/connectDB");
 
 // Init APP
@@ -22,8 +23,9 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 // Routes
+app.use("/api/v1/auth", authRouter);
+app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/users", userRouter);
-app.use("/api/v1/messages", messageRouter);
 app.all("*", (req, res, next) => {
   res
     .status(404)
