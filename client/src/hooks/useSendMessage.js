@@ -9,7 +9,7 @@ const useSendMessage = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/v1/message/send/${selectedConversation._id}`,
+        `http://able-badly-chipmunk.ngrok-free.app:3000/api/v1/message/send/${selectedConversation._id}`,
         {
           method: "POST",
           headers: {

@@ -9,7 +9,9 @@ const useGetMessages = () => {
     const getMessages = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`/api/v1/message/${selectedConversation._id}`);
+        const res = await fetch(
+          `http://able-badly-chipmunk.ngrok-free.app:3000/api/v1/message/${selectedConversation._id}`
+        );
         const data = await res.json();
         if (data.error) throw new Error(data.error);
         setMessages(data);
