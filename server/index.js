@@ -11,7 +11,7 @@ const userRouter = require("./routes/user");
 const { connectDB } = require("./db/connectDB");
 
 // Init APP
-const app = express();
+const { app, server } = require("./socket/socket");
 
 // .env Values
 const PORT = process.env.PORT || 5000;
@@ -33,7 +33,7 @@ app.all("*", (req, res, next) => {
 });
 
 // Starting API
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectDB();
   console.log(`Server is running on port ${PORT}`);
 });

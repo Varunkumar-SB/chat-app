@@ -19,8 +19,10 @@ import useSendMessage from "../../hooks/useSendMessage";
 import { Oval } from "react-loader-spinner";
 import useGetMessages from "../../hooks/useGetMessages";
 import { useAuthContext } from "../../context/AuthContext";
+import useListenMessages from "../../hooks/useListenMessages";
 
 function Messages() {
+  useListenMessages();
   const { selectedConversation, setSelectedConversation } = useConversation();
   const [message, setMessage] = useState("");
   const { messages, loading: messagesLoading } = useGetMessages();
