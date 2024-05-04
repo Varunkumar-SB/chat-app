@@ -1,0 +1,113 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  height: 10%;
+  border-bottom: 0.25rem solid white;
+  display: flex;
+  align-items: center;
+}
+
+.top img {
+  height: 75%;
+  margin: 0 1rem;
+}
+
+.top p {
+  font-size: 2rem;
+}
+
+.messagescss {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  gap: 1rem;
+}
+
+.messagescss::-webkit-scrollbar {
+  display: none;
+}
+
+.bottom {
+  height: 10%;
+  border-top: 0.25rem solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 1rem;
+}
+
+.bottom input {
+  height: 70%;
+  width: 90%;
+  border-radius: 1rem;
+  border: none;
+  font-size: 3rem;
+  padding: 1rem;
+}
+
+.bottom button {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--tertiary);
+  cursor: pointer;
+}
+
+.bottom button:hover {
+  background-color: #222;
+}
+
+.container1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 75%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 5rem;
+  gap: 1rem;
+}
+
+.backarrow {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 1rem;
+  margin-left: 1rem;
+}
+
+.backarrow:hover {
+  background-color: #222;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loadingcss {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+}

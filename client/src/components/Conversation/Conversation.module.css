@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  cursor: pointer;
+}
+
+.container .img {
+  height: 75%;
+  margin: 0 1.5rem 0 1rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .img img {
+  height: 100%;
+  margin: 0 1.5rem 0 1rem;
+  position: relative;
+}
+
+.img::after {
+  height: 2rem;
+  width: 2rem;
+  background-color: green;
+  border: 0.4rem solid var(--primary);
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  right: 1.5rem;
+  bottom: 0rem;
+}
+
+.container p {
+  font-size: 2rem;
+  margin-left: -1rem;
+}
+
+.icon {
+  position: absolute;
+  right: 1rem;
+  visibility: hidden;
+}
+
+.container:hover {
+  background-color: #222;
+}
+
+.container:hover .icon {
+  visibility: visible;
+}
+
+.selected {
+  background-color: #222;
+}
+.selected .icon {
+  visibility: visible;
+}
