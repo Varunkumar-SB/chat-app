@@ -10,7 +10,7 @@ const useGetMessages = () => {
       setLoading(true);
       try {
         const res = await fetch(
-          `http://able-badly-chipmunk.ngrok-free.app:3000/api/v1/message/${selectedConversation._id}`
+          `https://able-badly-chipmunk.ngrok-free.app:3000/api/v1/message/${selectedConversation._id}`
         );
         const data = await res.json();
         if (data.error) throw new Error(data.error);

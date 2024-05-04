@@ -19,7 +19,7 @@ const useSignUp = () => {
 
     try {
       const res = await fetch(
-        "http://able-badly-chipmunk.ngrok-free.app:3000/api/v1/auth/signup",
+        "https://able-badly-chipmunk.ngrok-free.app:3000/api/v1/auth/signup",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
