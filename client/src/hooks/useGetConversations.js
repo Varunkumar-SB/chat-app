@@ -10,7 +10,10 @@ const useGetConversations = () => {
       try {
         const res = await fetch(
           "https://able-badly-chipmunk.ngrok-free.app/api/v1/users",
-          { headers: { "ngrok-skip-browser-warning": "true" } }
+          {
+            headers: { "ngrok-skip-browser-warning": "true" },
+            credentials: "include",
+          }
         );
         const data = await res.json();
         if (data.error) throw new Error(data.error);

@@ -17,6 +17,7 @@ const useSendMessage = () => {
             "ngrok-skip-browser-warning": "true",
           },
           body: JSON.stringify({ message }),
+          credentials: "include",
         }
       );
       const data = await res.json();

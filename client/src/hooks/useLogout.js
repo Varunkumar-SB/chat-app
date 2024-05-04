@@ -17,6 +17,7 @@ const useLogout = () => {
             "Content-Type": "application/json",
             "ngrok-skip-browser-warning": "true",
           },
+          credentials: "include",
         }
       );
       const data = await res.json();

@@ -27,6 +27,7 @@ const useSignUp = () => {
             "ngrok-skip-browser-warning": "true",
           },
           body: JSON.stringify({ email, username, password, confirmPassword }),
+          credentials: "include",
         }
       );
 
