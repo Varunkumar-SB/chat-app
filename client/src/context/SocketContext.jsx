@@ -18,6 +18,9 @@ export const SocketContextProvider = ({ children }) => {
         query: {
           userId: authUser._id,
         },
+        extraHeaders: {
+          "ngrok-skip-browser-warning": "true",
+        },
       });
       setSocket(socket);
       socket.on("getOnlineUsers", (users) => {
