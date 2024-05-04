@@ -17,7 +17,7 @@ const useLogin = () => {
 
     try {
       const res = await fetch(
-        "https://able-badly-chipmunk.ngrok-free.app:3000/api/v1/auth/login",
+        "https://able-badly-chipmunk.ngrok-free.app/api/v1/auth/login",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
