@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middlewares
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "/frontend/dist")));
+app.use(express.static(path.join(__dirname, "/client/dist")));
 app.use(morgan("dev"));
 app.use(cookieParser());
 
