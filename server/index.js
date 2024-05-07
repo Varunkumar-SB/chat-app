@@ -14,14 +14,12 @@ const { connectDB } = require("./db/connectDB");
 // Init APP
 const { app, server } = require("./socket/socket");
 
-const __dirname = path.resolve();
-
 // .env Values
 const PORT = process.env.PORT || 5000;
 
 // Middlewares
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(morgan("dev"));
 app.use(cookieParser());
 
