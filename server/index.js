@@ -24,9 +24,9 @@ app.use(morgan("dev"));
 app.use(cookieParser());
 
 // Routes
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/users", userRouter);
