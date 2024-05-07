@@ -18,18 +18,13 @@ const useSignUp = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(
-        "https://able-badly-chipmunk.ngrok-free.app/api/v1/auth/signup",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true",
-          },
-          body: JSON.stringify({ email, username, password, confirmPassword }),
-          credentials: "include",
-        }
-      );
+      const res = await fetch("/api/v1/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, username, password, confirmPassword }),
+      });
 
       const data = await res.json();
 

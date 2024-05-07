@@ -9,15 +9,13 @@ const useSendMessage = () => {
     setLoading(true);
     try {
       const res = await fetch(
-        `https://able-badly-chipmunk.ngrok-free.app/api/v1/message/send/${selectedConversation._id}`,
+        `/api/v1/message/send/${selectedConversation._id}`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "ngrok-skip-browser-warning": "true",
           },
           body: JSON.stringify({ message }),
-          credentials: "include",
         }
       );
       const data = await res.json();
