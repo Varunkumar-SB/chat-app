@@ -1,6 +1,6 @@
 // Importing Dependencies
 require("dotenv").config();
-import path from "path";
+const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
