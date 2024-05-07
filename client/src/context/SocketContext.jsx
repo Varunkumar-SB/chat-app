@@ -15,7 +15,7 @@ export const SocketContextProvider = ({ children }) => {
   const origin = process.env.ORIGIN;
   useEffect(() => {
     if (authUser) {
-      const socket = io(`${origin}`, {
+      const socket = io("https://chat-app-q8ma.onrender.com", {
         query: {
           userId: authUser._id,
         },
